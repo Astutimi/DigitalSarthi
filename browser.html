@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Saarthi - Articles</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="browser.css" />
+    <style>
+      .voice-controls {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .voice-controls .btn {
+        background: var(--dark-brown);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .voice-controls .btn:active {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="logo-text">Digital Saarthi</div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="article.html">ARTICLES</a>
+        <a href="#">PRACTICE</a>
+        <a href="#">COURSES</a>
+        <a href="#">CONTACT</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="article-card" id="article-content">
+        <h3>HOW TO SEARCH ON A WEB BROWSER</h3>
+
+        <div class="intro">
+          A web browser is a software application that allows you to access and
+          navigate the internet. Popular browsers include Google Chrome, Mozilla
+          Firefox, Microsoft Edge, and Safari. Browsers interpret and display
+          web content, enabling users to search for information, watch videos,
+          and interact with websites.Searching on a web browser is one of the
+          easiest ways to find information quickly. Whether you’re looking for
+          news, recipes, tutorials, or connecting with friends on social media,
+          search engines like Google help you discover what you need in
+          seconds.
+        </div>
+
+        <img
+          src="https://tamay.co.za/wp-content/uploads/2022/06/web-browsers.jpg"
+          alt="browser images"
+        />
+        <br />
+        <p class="intro">Let's start by following below steps to search and navigate
+            the internet safely!</p>
+
+        </br>
+        <p class="steps">
+          <span class="step">STEP 1:</span> Open your preferred web browser
+          (e.g., Chrome, Firefox).
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 2:</span> Click on the address bar at the top.
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 3:</span> Type in the search engine's URL
+          (e.g., www.google.com) and press Enter.
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 4:</span> Once the search engine loads, click
+          on the search box.
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 5:</span> Type in your query or keywords
+          related to the information you're seeking.
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 6:</span> Press Enter or click on the search
+          button.
+        </p>
+        <br />
+        <p class="steps">
+          <span class="step">STEP 7:</span> Browse through the search results to
+          find the desired information.
+        </p>
+
+        <!-- Voice Controls -->
+        <div class="voice-controls">
+          <div>
+          <button id="voice-btn" class="btn">🔊 Listen to Article</button>
+          <button id="pause-btn" class="btn">⏸ Pause</button>
+          <button id="resume-btn" class="btn">▶ Resume</button>
+        </div>
+        </div>
+
+        <br />
+      
+        <p class="video-heading">CHECK OUT BELOW VIDEO TUTORIAL!</p>
+        <br />
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/5Vd2GHS7Po8"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <a href="demo.html" class="btn"
+            ><button class="btn">TRY OUT DEMO!</button></a
+          >
+          <p class="text">Thank you for reading!</p>
+          <p class="text">Have a happy learning :)</p>
+        
+      </div>
+    </main>
+    </br>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">Digital Saarthi</div>
+          <p>Your guide to mastering digital skills.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="article.html">Articles</a>
+          <a href="#">Practice</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Learning</h4>
+          <a href="#">Beginner's Guide</a>
+          <a href="#">Video Tutorials</a>
+          <a href="#">Progress Tracker</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Web Speech API to read the article aloud
+      const voiceBtn = document.getElementById("voice-btn");
+      const pauseBtn = document.getElementById("pause-btn");
+      const resumeBtn = document.getElementById("resume-btn");
+      const articleContent = document.getElementById("article-content");
+
+      const speech = new SpeechSynthesisUtterance();
+      speech.text = articleContent.innerText;
+      speech.lang = "en-US";
+      speech.rate = 0.9;
+
+      voiceBtn.addEventListener("click", () => {
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(speech);
+      });
+
+      pauseBtn.addEventListener("click", () => {
+        window.speechSynthesis.pause();
+      });
+
+      resumeBtn.addEventListener("click", () => {
+        window.speechSynthesis.resume();
+      });
+    </script>
+  </body>
+</html>
