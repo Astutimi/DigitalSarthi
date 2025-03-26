@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Saarthi - Articles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <div class="logo-text">Digital Saarthi</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="article.html">ARTICLES</a>
+      <a href="#">PRACTICE</a>
+      <a href="#">COURSES</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="articles-grid">
+      <div class="article-card">
+        <h3>Using Email on Your Smartphone</h3>
+        <p>Learn to send messages, documents, and photos instantly</p>
+        <button class="start-btn">START LEARNING</button>
+      </div>
+      
+      <div class="article-card">
+        <h3>Online Car Booking</h3>
+        <p>Master ride-hailing apps step-by-step</p>
+        <button class="start-btn">START LEARNING</button>
+      </div>
+
+      <div class="article-card">
+        <h3>WiFi Setup Guide</h3>
+        <p>Connect to wireless networks securely</p>
+        <button class="start-btn">START LEARNING</button>
+      </div>
+
+      <div class="article-card">
+        <h3>Web Browsing Basics</h3>
+        <p>Search and navigate the internet safely</p>
+        <button class="start-btn">START LEARNING</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">Digital Saarthi</div>
+        <p>Your guide to mastering digital skills.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="article.html">Articles</a>
+        <a href="#">Practice</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Learning</h4>
+        <a href="#">Beginner's Guide</a>
+        <a href="#">Video Tutorials</a>
+        <a href="#">Progress Tracker</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Handle search query
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    
+    if(searchQuery) {
+      const searchHeader = document.createElement('h2');
+      searchHeader.style.padding = '2rem 5%';
+      searchHeader.innerHTML = `Search Results for: <em>"${searchQuery}"</em>`;
+      document.querySelector('main').prepend(searchHeader);
+    }
+  </script>
+</body>
+</html>
