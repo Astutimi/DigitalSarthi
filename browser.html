@@ -113,7 +113,7 @@
         </div>
       </div>
     </main>
-    <!-- Add this modal at the end of body before footer -->
+    
        <!-- Demo Modal for Web Searching -->
 <div class="demo-modal" id="searchDemoModal">
     <div class="modal-content">
@@ -169,73 +169,7 @@
     </div>
   </div>
   
-    <!-- <div class="demo-modal" id="demoModal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="browser-interface">
-          <div class="browser-header">
-            <h3>Compose browser</h3>
-            <div class="browser-controls">
-              <button class="btn" id="prevStep">← Previous</button>
-              <button class="btn" id="nextStep">Next →</button>
-            </div>
-          </div>
-
-          <div class="browser-body">
-            <div class="step-indicator" id="stepIndicator">Step 1/6</div>
-
-            <!-- Demo Steps -->
-    <!--
-            <div class="demo-step step-1 active">
-              <div class="arrow arrow-to"></div>
-              <div class="input-field">
-                <label>To:</label>
-                <input type="browser" placeholder="Enter recipient's browser" />
-              </div>
-            </div>
-
-            <div class="demo-step step-2">
-              <div class="arrow arrow-subject"></div>
-              <div class="input-field">
-                <label>Subject:</label>
-                <input type="text" placeholder="browser subject" />
-              </div>
-            </div>
-
-            <div class="demo-step step-3">
-              <div class="arrow arrow-body"></div>
-              <div class="input-field">
-                <label>Message:</label>
-                <textarea rows="5"></textarea>
-              </div>
-            </div>
-
-            <div class="demo-step step-4">
-              <div class="arrow arrow-attach"></div>
-              <div class="input-field">
-                <button class="btn attach-btn">
-                  <span class="paperclip">📎</span> Attach File
-                </button>
-              </div>
-            </div>
-
-            <div class="demo-step step-5">
-              <div class="arrow arrow-send"></div>
-              <div class="input-field">
-                <button class="btn send-btn">Send</button>
-              </div>
-            </div>
-
-            <div class="demo-step step-6">
-              <div class="success-message">
-                <h3>🎉 browser Sent Successfully!</h3>
-                <button class="btn" id="restartDemo">Restart Demo</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+   
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">
@@ -281,55 +215,7 @@
       resumeBtn.addEventListener("click", () => {
         window.speechSynthesis.resume();
       });
-      // Add this to existing script
-    //   const demoModal = document.getElementById("demoModal");
-    //   const demoButton = document.querySelector(".demo-button");
-    //   const closeModal = document.querySelector(".close");
-    //   let currentStep = 1;
-
-    //   function showStep(step) {
-    //     document
-    //       .querySelectorAll(".demo-step")
-    //       .forEach((el) => el.classList.remove("active"));
-    //     document.querySelector(`.step-${step}`).classList.add("active");
-    //     document.getElementById("stepIndicator").textContent = `Step ${step}/6`;
-    //   }
-
-    //   demoButton.addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     demoModal.style.display = "block";
-    //     currentStep = 1;
-    //     showStep(currentStep);
-    //   });
-
-    //   closeModal.addEventListener("click", () => {
-    //     demoModal.style.display = "none";
-    //   });
-
-    //   window.addEventListener("click", (e) => {
-    //     if (e.target === demoModal) {
-    //       demoModal.style.display = "none";
-    //     }
-    //   });
-
-    //   document.getElementById("nextStep").addEventListener("click", () => {
-    //     if (currentStep < 6) {
-    //       currentStep++;
-    //       showStep(currentStep);
-    //     }
-    //   });
-
-    //   document.getElementById("prevStep").addEventListener("click", () => {
-    //     if (currentStep > 1) {
-    //       currentStep--;
-    //       showStep(currentStep);
-    //     }
-    //   });
-
-    //   document.getElementById("restartDemo").addEventListener("click", () => {
-    //     currentStep = 1;
-    //     showStep(currentStep);
-    //   });
+      
     const demoModal = document.getElementById("searchDemoModal");
   const demoButton = document.querySelector(".demo-button");
   const closeModal = document.querySelector(".close");
