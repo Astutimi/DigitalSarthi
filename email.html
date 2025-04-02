@@ -65,77 +65,84 @@
       <div class="video-container">
         <iframe width="853" height="480" src="https://www.youtube.com/embed/sYHxF98TU9k" title="The Best How to Send an Email With an Android Phone or Tablet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
     </div>
-
-      
     </div>
   </main>
-  <!-- Add this modal at the end of body before footer -->
-<div class="demo-modal" id="demoModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="email-interface">
-      <div class="email-header">
-        <h3>Compose Email</h3>
-        <div class="email-controls">
-          <button class="btn" id="prevStep">← Previous</button>
-          <button class="btn" id="nextStep">Next →</button>
-        </div>
+
+  <!-- Demo Modal -->
+  <div class="demo-modal" id="demoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="demo-progress">
+        <div class="progress-step active">1</div>
+        <div class="progress-step">2</div>
+        <div class="progress-step">3</div>
+        <div class="progress-step">4</div>
+        <div class="progress-step">5</div>
       </div>
       
-      <div class="email-body">
-        <div class="step-indicator" id="stepIndicator">Step 1/6</div>
+      <div class="email-interface">
+        <div class="email-header">
+          <h3>Compose Email</h3>
+          <div class="email-controls">
+            <button class="btn" id="prevStep">← Previous</button>
+            <button class="btn" id="nextStep">Next →</button>
+          </div>
+        </div>
         
-        <!-- Demo Steps -->
-        <div class="demo-step step-1 active">
-          <div class="arrow arrow-to"></div>
-          <div class="input-field">
-            <label>To:</label>
-            <input type="email" placeholder="Enter recipient's email">
+        <div class="email-body">
+          <!-- Step 1 -->
+          <div class="demo-step step-1 active">
+            <div class="input-field">
+              <label>To:</label>
+              <input type="email" placeholder="Enter recipient's email">
+              <div class="step-status"></div>
+            </div>
           </div>
-        </div>
-
-        <div class="demo-step step-2">
-          <div class="arrow arrow-subject"></div>
-          <div class="input-field">
-            <label>Subject:</label>
-            <input type="text" placeholder="Email subject">
+  
+          <!-- Step 2 -->
+          <div class="demo-step step-2">
+            <div class="input-field">
+              <label>Subject:</label>
+              <input type="text" placeholder="Email subject">
+            </div>
           </div>
-        </div>
-
-        <div class="demo-step step-3">
-          <div class="arrow arrow-body"></div>
-          <div class="input-field">
-            <label>Message:</label>
-            <textarea rows="5"></textarea>
+  
+          <!-- Step 3 -->
+          <div class="demo-step step-3">
+            <div class="input-field">
+              <label>Message:</label>
+              <textarea rows="5"></textarea>
+            </div>
           </div>
-        </div>
-
-        <div class="demo-step step-4">
-          <div class="arrow arrow-attach"></div>
-          <div class="input-field">
-            <button class="btn attach-btn">
-              <span class="paperclip">📎</span> Attach File
-            </button>
+  
+          <!-- Step 4 -->
+          <div class="demo-step step-4">
+            <div class="input-field">
+              <button class="btn attach-btn">
+                <span class="paperclip">📎</span> Attach File
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div class="demo-step step-5">
-          <div class="arrow arrow-send"></div>
-          <div class="input-field">
-            <button class="btn send-btn">Send</button>
+  
+          <!-- Step 5 -->
+          <div class="demo-step step-5">
+            <div class="input-field">
+              <button class="btn send-btn">Send</button>
+            </div>
           </div>
-        </div>
-
-        <div class="demo-step step-6">
-          <div class="success-message">
-            <h3>🎉 Email Sent Successfully!</h3>
-            <button class="btn" id="restartDemo">Restart Demo</button>
+  
+          <!-- Success Message -->
+          <div class="demo-step step-6">
+            <div class="success-message">
+              <h3>🎉 Email Sent Successfully!</h3>
+              <button class="btn" id="restartDemo">Restart Demo</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
@@ -158,76 +165,79 @@
   </footer>
 
   <script>
-    // Add voice control functionality here
+    // Voice Controls
     const voiceBtn = document.getElementById("voice-btn");
-      const pauseBtn = document.getElementById("pause-btn");
-      const resumeBtn = document.getElementById("resume-btn");
-      const articleContent = document.getElementById("article-content");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resumeBtn = document.getElementById("resume-btn");
+    const articleContent = document.getElementById("article-content");
 
-      const speech = new SpeechSynthesisUtterance();
-      speech.text = articleContent.innerText;
-      speech.lang = "en-US";
-      speech.rate = 0.9;
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = articleContent.innerText;
+    speech.lang = "en-US";
+    speech.rate = 0.9;
 
-      voiceBtn.addEventListener("click", () => {
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(speech);
+    voiceBtn.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(speech);
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      window.speechSynthesis.pause();
+    });
+
+    resumeBtn.addEventListener("click", () => {
+      window.speechSynthesis.resume();
+    });
+
+    // Demo Controls
+    const demoModal = document.getElementById("demoModal");
+    const demoButton = document.querySelector(".demo-button");
+    const closeModal = document.querySelector(".close");
+    let currentStep = 1;
+
+    function showStep(step) {
+      document.querySelectorAll(".demo-step").forEach(el => el.classList.remove("active"));
+      document.querySelector(`.step-${step}`).classList.add("active");
+      document.querySelectorAll(".progress-step").forEach((dot, index) => {
+        dot.classList.toggle("active", index < step);
       });
+    }
 
-      pauseBtn.addEventListener("click", () => {
-        window.speechSynthesis.pause();
-      });
+    demoButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      demoModal.style.display = "block";
+      currentStep = 1;
+      showStep(currentStep);
+    });
 
-      resumeBtn.addEventListener("click", () => {
-        window.speechSynthesis.resume();
-      });
-      // Add this to existing script
-const demoModal = document.getElementById("demoModal");
-const demoButton = document.querySelector(".demo-button");
-const closeModal = document.querySelector(".close");
-let currentStep = 1;
+    closeModal.addEventListener("click", () => {
+      demoModal.style.display = "none";
+    });
 
-function showStep(step) {
-  document.querySelectorAll(".demo-step").forEach(el => el.classList.remove("active"));
-  document.querySelector(`.step-${step}`).classList.add("active");
-  document.getElementById("stepIndicator").textContent = `Step ${step}/6`;
-}
+    window.addEventListener("click", (e) => {
+      if (e.target === demoModal) {
+        demoModal.style.display = "none";
+      }
+    });
 
-demoButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  demoModal.style.display = "block";
-  currentStep = 1;
-  showStep(currentStep);
-});
+    document.getElementById("nextStep").addEventListener("click", () => {
+      if (currentStep < 6) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
 
-closeModal.addEventListener("click", () => {
-  demoModal.style.display = "none";
-});
+    document.getElementById("prevStep").addEventListener("click", () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
 
-window.addEventListener("click", (e) => {
-  if (e.target === demoModal) {
-    demoModal.style.display = "none";
-  }
-});
-
-document.getElementById("nextStep").addEventListener("click", () => {
-  if (currentStep < 6) {
-    currentStep++;
-    showStep(currentStep);
-  }
-});
-
-document.getElementById("prevStep").addEventListener("click", () => {
-  if (currentStep > 1) {
-    currentStep--;
-    showStep(currentStep);
-  }
-});
-
-document.getElementById("restartDemo").addEventListener("click", () => {
-  currentStep = 1;
-  showStep(currentStep);
-});
+    document.getElementById("restartDemo").addEventListener("click", () => {
+      currentStep = 1;
+      showStep(currentStep);
+    });
   </script>
 </body>
 </html>
