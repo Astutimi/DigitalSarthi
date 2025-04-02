@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiFi Setup Tutorial - Digital Saarthi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="wifi.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-text">Digital Saarthi</div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="article.html">ARTICLES</a>
+      <a href="#">PRACTICE</a>
+      <a href="#">COURSES</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-card" id="article-content">
+      <h3>How to Setup WiFi in Your Device</h3>
+      
+      <img src="https://img.freepik.com/premium-photo/business-using-smartphone-with-wifi-icon-business-communication-social-network-concept_34936-3159.jpg?w=1380" alt="WiFi tutorial" class="tutorial-image">
+
+      <div class="step-container">
+        <div class="step-number">Step 1</div>
+        <p class="step-content">Open the Settings app on your device.</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 2</div>
+        <p class="step-content">Go to the 'Wi-Fi' section.</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 3</div>
+        <p class="step-content">Turn on Wi-Fi if it is disabled.</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 4</div>
+        <p class="step-content">Select the desired Wi-Fi network from the available list.</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 5</div>
+        <p class="step-content">Enter the Wi-Fi password and tap 'Connect'.</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 6</div>
+        <p class="step-content">Wait for the connection to establish and ensure the Wi-Fi icon appears in the status bar.</p>
+      </div>
+
+      <div class="voice-controls">
+        <button id="voice-btn" class="btn">🔊 Listen to Article</button>
+        <button id="pause-btn" class="btn">⏸ Pause</button>
+        <button id="resume-btn" class="btn">▶ Resume</button>
+      </div>
+
+      <a href="demo-wifi.html" class="demo-button">
+        <button class="btn">Try Demo</button>
+      </a>
+
+      <div class="video-container">
+        <iframe width="864" height="486" src="https://www.youtube.com/embed/eNbK43xP6dE" title="How to Add Wireless Wifi Network Manually in Windows 10 PC or Laptop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const voiceBtn = document.getElementById("voice-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resumeBtn = document.getElementById("resume-btn");
+    const articleContent = document.getElementById("article-content");
+
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = articleContent.innerText;
+    speech.lang = "en-US";
+    speech.rate = 0.9;
+
+    voiceBtn.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(speech);
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      window.speechSynthesis.pause();
+    });
+
+    resumeBtn.addEventListener("click", () => {
+      window.speechSynthesis.resume();
+    });
+  </script>
+</body>
+</html>
