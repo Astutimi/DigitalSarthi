@@ -112,6 +112,9 @@ main {
   padding: 2rem;
   border-radius: 10px;
   position: relative;
+  /* Only added these 2 lines */
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .close {
@@ -201,8 +204,6 @@ main {
   border: 1px solid var(--dark-brown);
   border-radius: 4px;
 }
-
-/* Removed arrow styles */
 
 .success-message {
   text-align: center;
