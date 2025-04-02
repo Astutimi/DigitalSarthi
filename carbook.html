@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Booking Tutorial - Digital Saarthi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carbook.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-text">Digital Saarthi</div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="article.html">ARTICLES</a>
+      <a href="#">PRACTICE</a>
+      <a href="#">COURSES</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-card" id="article-content">
+      <h3>How to Book a Car Online</h3>
+      
+      <img src="car.webp" alt="Car Booking Tutorial" class="tutorial-image">
+
+      <div class="step-container">
+        <div class="step-number">Step 1</div>
+        <p class="step-content">Open ride-hailing app (Ola/Uber)</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 2</div>
+        <p class="step-content">Enter pickup & drop locations</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 3</div>
+        <p class="step-content">Select vehicle type</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 4</div>
+        <p class="step-content">Choose payment method</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 5</div>
+        <p class="step-content">Confirm booking</p>
+      </div>
+
+      <div class="voice-controls">
+        <div>
+          <button id="voice-btn" class="btn">🔊 Listen to Article</button>
+          <button id="pause-btn" class="btn">⏸ Pause</button>
+          <button id="resume-btn" class="btn">▶ Resume</button>
+        </div>
+      </div>
+
+      <a href="#!" class="demo-button">
+        <button class="btn">Try Demo</button>
+      </a>
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/hg-XPf4eC7E" title="How to Book an Uber or Ola Cab Without the App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <!-- Car Booking Demo Modal -->
+  <div class="demo-modal" id="demoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="booking-interface">
+        <div class="booking-header">
+          <h3>Book Your Ride</h3>
+          <div class="booking-controls">
+            <button class="btn" id="prevStep">← Previous</button>
+            <button class="btn" id="nextStep">Next →</button>
+          </div>
+        </div>
+        
+        <div class="booking-body">
+          <div class="step-indicator" id="stepIndicator">Step 1/5</div>
+          
+          <div class="demo-step step-1 active">
+            <div class="input-field">
+              <label>Service Provider:</label>
+              <div class="app-options">
+                <button class="app-option">Ola</button>
+                <button class="app-option">Uber</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-step step-2">
+            <div class="input-field">
+              <label>Pickup Location:</label>
+              <input type="text" placeholder="Enter pickup address">
+            </div>
+            <div class="input-field">
+              <label>Destination:</label>
+              <input type="text" placeholder="Enter destination">
+            </div>
+          </div>
+
+          <div class="demo-step step-3">
+            <div class="input-field">
+              <label>Car Type:</label>
+              <div class="car-options">
+                <button class="car-option">Mini</button>
+                <button class="car-option">Sedan</button>
+                <button class="car-option">SUV</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-step step-4">
+            <div class="input-field">
+              <label>Payment Method:</label>
+              <div class="payment-options">
+                <button class="payment-option">Cash</button>
+                <button class="payment-option">UPI</button>
+                <button class="payment-option">Card</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-step step-5">
+            <div class="success-message">
+              <h3>🎉 Ride Booked Successfully!</h3>
+              <button class="btn" id="restartDemo">Book Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <!-- Same footer as email.html -->
+  </footer>
+
+  <script>
+    // Voice Control
+    const voiceBtn = document.getElementById("voice-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resumeBtn = document.getElementById("resume-btn");
+    const articleContent = document.getElementById("article-content");
+
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = articleContent.innerText;
+    speech.lang = "en-US";
+    speech.rate = 0.9;
+
+    voiceBtn.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(speech);
+    });
+
+    pauseBtn.addEventListener("click", () => window.speechSynthesis.pause());
+    resumeBtn.addEventListener("click", () => window.speechSynthesis.resume());
+
+    // Car Booking Demo
+    let currentStep = 1;
+    const demoModal = document.getElementById("demoModal");
+    const demoButton = document.querySelector(".demo-button");
+    const closeModal = document.querySelector(".close");
+
+    function showStep(step) {
+      document.querySelectorAll(".demo-step").forEach(el => el.classList.remove("active"));
+      document.querySelector(`.step-${step}`).classList.add("active");
+      document.getElementById("stepIndicator").textContent = `Step ${step}/5`;
+    }
+
+    demoButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      demoModal.style.display = "block";
+      currentStep = 1;
+      showStep(currentStep);
+    });
+
+    closeModal.addEventListener("click", () => demoModal.style.display = "none");
+    window.addEventListener("click", (e) => e.target === demoModal && (demoModal.style.display = "none"));
+
+    document.getElementById("nextStep").addEventListener("click", () => {
+      if(currentStep < 5) showStep(++currentStep);
+    });
+
+    document.getElementById("prevStep").addEventListener("click", () => {
+      if(currentStep > 1) showStep(--currentStep);
+    });
+
+    document.getElementById("restartDemo").addEventListener("click", () => {
+      currentStep = 1;
+      showStep(currentStep);
+    });
+  </script>
+</body>
+</html>
