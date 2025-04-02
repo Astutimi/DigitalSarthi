@@ -1,90 +1,6 @@
-:root {
-  --dark-brown: #a01212;
-  --light-bg: #fde4e4;
-  --gradient1: #fde4e4;
-  --gradient2: #ffb5b5;
-  --accent: #ff6b6b;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: var(--light-bg);
-  font-family: "Arial", sans-serif;
-  position: relative;
-}
-
-body::after {
-  content: none;
-  position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 120%;
-  height: 60%;
-  background: linear-gradient(
-    180deg,
-    var(--gradient1) 0%,
-    var(--gradient2) 100%
-  );
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1;
-}
-
-/* Navigation */
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background: transparent;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo-text {
-  font-family: "Handlee", cursive;
-  font-size: 2rem;
-  background: linear-gradient(45deg, var(--dark-brown), #7a0d0d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(160, 18, 18, 0.2);
-}
-
-.nav-links {
-  margin-left: auto;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--dark-brown);
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(160, 18, 18, 0.2);
-}
-
-.nav-links a:hover {
-  background: rgba(160, 18, 18, 0.1);
-}
-
-/* Main Content */
+/* Web browsing Page Specific Styles */
 main {
-  flex: 1;
-  padding-bottom: 60px; /* Footer height compensation */
+  padding: 2rem 5%;
 }
 
 .article-card {
@@ -92,39 +8,70 @@ main {
   padding: 2.5rem;
   border-radius: 15px;
   border: 2px solid var(--dark-brown);
-  margin-left: 250px;
-  margin-right: 250px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .article-card h3 {
   color: var(--dark-brown);
-  margin-bottom: 1rem;
   text-align: center;
-  font-size: 25px;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
-img {
-  height: 200px;
-  width: 300px;
-  padding-top: 10px;
-
-  padding-bottom: 10px;
+.tutorial-image {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  margin: 1.5rem auto;
   border-radius: 10px;
-}
-.step {
-  font-weight: bold;
-  color: #7a0d0d;
-}
-
-.steps {
-  color: #a01212;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .intro {
-  color: #7a0d0d;
+  color: #444;
 }
-.video-heading {
+
+.step-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.step-number {
+  color: var(--dark-brown);
   font-weight: bold;
-  color: #7a0d0d;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content {
+  color: #444;
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.voice-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .btn {
@@ -134,84 +81,131 @@ img {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.voice-controls {
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  gap: 1rem;
-}
-
-.text {
-  font-size: 20px;
-  color: #7a0d0d;
-  font-weight: bold;
-}
-/* Footer */
-.footer {
-  background: var(--dark-brown);
-  color: white;
-  padding: 2rem 5%;
-  margin-top: -60px; /* Negative margin to pull up */
-  height: 180px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.footer-brand {
-  max-width: 300px;
-}
-
-.footer-logo {
-  font-family: "Handlee", cursive;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
   transition: opacity 0.3s ease;
 }
 
-.footer-links a:hover {
-  opacity: 0.8;
+.btn:hover {
+  opacity: 0.9;
 }
 
+.demo-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto;
+  text-decoration: none;
+}
+/* Demo Modal Styles */
+.demo-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.step-indicator {
+  font-weight: bold;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  height: fit-content;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.browser-interface {
+  border: 2px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.browser-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.demo-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.browser-img {
+  width: 80%;
+  height: 90%;
+  max-width: 500px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.demoimg {
+  margin-top: 5px;
+  height: 350px;
+  width: 650px;
+}
+
+.demo-step {
+  display: none;
+}
+
+.demo-step.active {
+  display: block;
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+}
+
+.step-indicator {
+  text-align: start;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Existing styles remain same */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .article-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
   }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .search-input {
-    padding-right: 120px;
-  }
-  .get-started-btn {
-    padding: 0.6rem 1.2rem;
-  }
-  .footer-content {
-    text-align: center;
+
+  .article-card h3 {
+    font-size: 1.4rem;
   }
 }
