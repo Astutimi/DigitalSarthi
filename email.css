@@ -1,97 +1,98 @@
 /* Email Page Specific Styles */
 main {
-    padding: 2rem 5%;
-  }
-  
-  .article-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 2px solid var(--dark-brown);
-    max-width: 1000px;
-    margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .article-card h3 {
-    color: var(--dark-brown);
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tutorial-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 1.5rem auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .step-container {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    border-left: 4px solid var(--accent);
-  }
-  
-  .step-number {
-    color: var(--dark-brown);
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .step-content {
-    color: #444;
-    line-height: 1.6;
-  }
-  
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    margin: 2rem 0;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  .voice-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  
-  .btn {
-    background: var(--dark-brown);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
-  .demo-button {
-    display: block;
-    width: fit-content;
-    margin: 1.5rem auto;
-    text-decoration: none;
-  }
-  /* Demo Modal Styles */
+  padding: 2rem 5%;
+}
+
+.article-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--dark-brown);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-card h3 {
+  color: var(--dark-brown);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.tutorial-image {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.step-number {
+  color: var(--dark-brown);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content {
+  color: #444;
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.voice-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.btn {
+  background: var(--dark-brown);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.demo-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto;
+  text-decoration: none;
+}
+
+/* Demo Modal Styles */
 .demo-modal {
   display: none;
   position: fixed;
@@ -139,14 +140,45 @@ main {
   gap: 1rem;
 }
 
+/* Demo Step States */
 .demo-step {
-  display: none;
-  position: relative;
-  min-height: 300px;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 .demo-step.active {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.active-step .input-field {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.active-step .input-field::before {
+  content: "Current Step";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  color: var(--dark-brown);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.active-step input,
+.active-step textarea,
+.active-step button {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.inactive-field {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .input-field {
@@ -170,28 +202,16 @@ main {
   border-radius: 4px;
 }
 
-.arrow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  animation: bounce 1s infinite;
-}
-
-.arrow-to { left: 20px; top: -30px; }
-.arrow-subject { left: 20px; top: -30px; }
-.arrow-body { left: 20px; top: -30px; }
-.arrow-attach { left: 20px; top: -30px; }
-.arrow-send { right: 20px; bottom: -30px; }
-
-.arrow::after {
-  content: '➤';
-  font-size: 32px;
-  color: var(--dark-brown);
-}
+/* Removed arrow styles */
 
 .success-message {
   text-align: center;
   padding: 2rem;
+}
+
+.success-message h3 {
+  color: var(--dark-brown);
+  margin-bottom: 1.5rem;
 }
 
 .send-btn {
@@ -200,19 +220,37 @@ main {
   padding: 0.8rem 2rem;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Progress Steps */
+.demo-progress {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Existing styles remain same */
-  @media (max-width: 768px) {
-    .article-card {
-      padding: 1.5rem;
-      margin: 0 1rem;
-    }
-    
-    .article-card h3 {
-      font-size: 1.4rem;
-    }
+.progress-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.progress-step.active {
+  background: var(--dark-brown);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
   }
+  
+  .article-card h3 {
+    font-size: 1.4rem;
+  }
+}
