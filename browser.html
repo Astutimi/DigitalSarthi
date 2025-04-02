@@ -3,38 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Saarthi - Articles</title>
+    <title>Web Browsing Tutorial- Digital Saarthi</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="browser.css" />
-    <style>
-      .voice-controls {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem 0;
-      }
-      .voice-controls .btn {
-        background: var(--dark-brown);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .voice-controls .btn:active {
-        opacity: 0.7;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="browser_final.css" />
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo-container">
-        <div class="logo-text">Digital Saarthi</div>
-      </div>
+      <div class="logo-text">Digital Saarthi</div>
       <div class="nav-links">
         <a href="index.html">HOME</a>
         <a href="article.html">ARTICLES</a>
@@ -48,6 +27,7 @@
       <div class="article-card" id="article-content">
         <h3>HOW TO SEARCH ON A WEB BROWSER</h3>
 
+        <img src="browser.png" alt="Web browsing tutorial" class="tutorial-image" />
         <div class="intro">
           A web browser is a software application that allows you to access and
           navigate the internet. Popular browsers include Google Chrome, Mozilla
@@ -56,108 +36,229 @@
           and interact with websites.Searching on a web browser is one of the
           easiest ways to find information quickly. Whether you’re looking for
           news, recipes, tutorials, or connecting with friends on social media,
-          search engines like Google help you discover what you need in
-          seconds.
+          search engines like Google help you discover what you need in seconds.
         </div>
 
-        <img
-          src="https://tamay.co.za/wp-content/uploads/2022/06/web-browsers.jpg"
-          alt="browser images"
-        />
         <br />
-        <p class="intro">Let's start by following below steps to search and navigate
-            the internet safely!</p>
 
-        </br>
-        <p class="steps">
-          <span class="step">STEP 1:</span> Open your preferred web browser
-          (e.g., Chrome, Firefox).
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 2:</span> Click on the address bar at the top.
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 3:</span> Type in the search engine's URL
-          (e.g., www.google.com) and press Enter.
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 4:</span> Once the search engine loads, click
-          on the search box.
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 5:</span> Type in your query or keywords
-          related to the information you're seeking.
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 6:</span> Press Enter or click on the search
-          button.
-        </p>
-        <br />
-        <p class="steps">
-          <span class="step">STEP 7:</span> Browse through the search results to
-          find the desired information.
+        <p class="intro">
+          Let's start by following below steps to search and navigate the
+          internet safely!
         </p>
 
-        <!-- Voice Controls -->
+        <div class="step-container">
+          <div class="step-number">Step 1</div>
+          <p class="step-content">
+            Open your preferred web browser (e.g., Chrome, Firefox).
+          </p>
+        </div>
+
+        <div class="step-container">
+          <div class="step-number">Step 2</div>
+          <p class="step-content">Click on the address bar at the top.</p>
+        </div>
+
+        <div class="step-container">
+          <div class="step-number">Step 3</div>
+          <p class="step-content">
+            Type in the search engine's URL (e.g., www.google.com) and press
+            Enter.
+          </p>
+        </div>
+
+        <div class="step-container">
+          <div class="step-number">Step 4</div>
+          <p class="step-content">
+            Once the search engine loads, click on the search box.
+          </p>
+        </div>
+
+        <div class="step-container">
+          <div class="step-number">Step 5</div>
+          <p class="step-content">
+            Type in your query or keywords related to the information you're
+            seeking and press Enter or click on the search button.
+          </p>
+        </div>
+
+        <div class="step-container">
+          <div class="step-number">Step 6</div>
+          <p class="step-content">
+            Browse through the search results to find the desired information.
+          </p>
+        </div>
+
         <div class="voice-controls">
           <div>
-          <button id="voice-btn" class="btn">🔊 Listen to Article</button>
-          <button id="pause-btn" class="btn">⏸ Pause</button>
-          <button id="resume-btn" class="btn">▶ Resume</button>
-        </div>
+            <button id="voice-btn" class="btn">🔊 Listen to Article</button>
+            <button id="pause-btn" class="btn">⏸ Pause</button>
+            <button id="resume-btn" class="btn">▶ Resume</button>
+          </div>
         </div>
 
-        <br />
-      
-        <p class="video-heading">CHECK OUT BELOW VIDEO TUTORIAL!</p>
-        <br />
+        <a href="#" class="demo-button">
+          <button class="btn">Try Demo</button>
+        </a>
         <div class="video-container">
           <iframe
-            width="560"
-            height="315"
+            width="853"
+            height="480"
             src="https://www.youtube.com/embed/5Vd2GHS7Po8"
+            title="Get Started with Google Chrome - A Tutorial for Beginners!"
             frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
-          <a href="demo.html" class="btn"
-            ><button class="btn">TRY OUT DEMO!</button></a
-          >
-          <p class="text">Thank you for reading!</p>
-          <p class="text">Have a happy learning :)</p>
-        
+        </div>
       </div>
     </main>
-    </br>
+    <!-- Add this modal at the end of body before footer -->
+       <!-- Demo Modal for Web Searching -->
+<div class="demo-modal" id="searchDemoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="browser-interface">
+        <div class="browser-header">
+          <h3>Web Browsing Demo</h3>
+          <div class="browser-controls">
+            <button class="btn" id="prevStep">← Previous</button>
+            <button class="btn" id="nextStep">Next →</button>
+          </div>
+        </div>
+  
+        <div class="browser-body">
+          <div class="step-indicator" id="stepIndicator">Step 1/5</div>
+        </br>
+  
+          <!-- Demo Steps -->
+          <div class="demo-step step-1 active">
+            <p><strong>Step 1:</strong> Open a web browser (e.g., Chrome, Firefox).</p>
+            <img src="browser_open.jpeg" alt="Opening Browser" />
+          </div>
+  
+          <div class="demo-step step-2">
+            <p><strong>Step 2:</strong> Click on the address bar.</p>
+            <img class="demoimg" src="browser_address_bar.jpeg" alt="Clicking Address Bar" />
+          </div>
+  
+          <div class="demo-step step-3">
+            <p><strong>Step 3:</strong> Type "www.google.com" and press Enter.</p>
+            <img class="demoimg" src="browser_google.png" alt="Google Homepage" />
+          </div>
+  
+          <div class="demo-step step-4">
+            <p><strong>Step 4:</strong> Click on the search box and type your query.</p>
+            <img class="demoimg" src="browser_search.jpeg" alt="Typing Search Query" />
+          </div>
+  
+          <div class="demo-step step-5">
+            <p><strong>Step 5:</strong> Press Enter to see the search results.</p>
+            <img class="demoimg" src="browser_results.png" alt="Search Results" />
+          </div>
+  
+          <div class="demo-step step-6">
+            <div class="success-message">
+              <h3>🎉 Web browsing completed Successfully!</h3>
+            </br>
+              <button class="btn" id="restartDemo">Restart Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- <div class="demo-modal" id="demoModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="browser-interface">
+          <div class="browser-header">
+            <h3>Compose browser</h3>
+            <div class="browser-controls">
+              <button class="btn" id="prevStep">← Previous</button>
+              <button class="btn" id="nextStep">Next →</button>
+            </div>
+          </div>
 
+          <div class="browser-body">
+            <div class="step-indicator" id="stepIndicator">Step 1/6</div>
+
+            <!-- Demo Steps -->
+    <!--
+            <div class="demo-step step-1 active">
+              <div class="arrow arrow-to"></div>
+              <div class="input-field">
+                <label>To:</label>
+                <input type="browser" placeholder="Enter recipient's browser" />
+              </div>
+            </div>
+
+            <div class="demo-step step-2">
+              <div class="arrow arrow-subject"></div>
+              <div class="input-field">
+                <label>Subject:</label>
+                <input type="text" placeholder="browser subject" />
+              </div>
+            </div>
+
+            <div class="demo-step step-3">
+              <div class="arrow arrow-body"></div>
+              <div class="input-field">
+                <label>Message:</label>
+                <textarea rows="5"></textarea>
+              </div>
+            </div>
+
+            <div class="demo-step step-4">
+              <div class="arrow arrow-attach"></div>
+              <div class="input-field">
+                <button class="btn attach-btn">
+                  <span class="paperclip">📎</span> Attach File
+                </button>
+              </div>
+            </div>
+
+            <div class="demo-step step-5">
+              <div class="arrow arrow-send"></div>
+              <div class="input-field">
+                <button class="btn send-btn">Send</button>
+              </div>
+            </div>
+
+            <div class="demo-step step-6">
+              <div class="success-message">
+                <h3>🎉 browser Sent Successfully!</h3>
+                <button class="btn" id="restartDemo">Restart Demo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">
           <div class="footer-logo">Digital Saarthi</div>
-          <p>Your guide to mastering digital skills.</p>
+          <p>Empowering digital literacy</p>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <a href="index.html">Home</a>
           <a href="article.html">Articles</a>
           <a href="#">Practice</a>
-          <a href="#">Contact</a>
         </div>
         <div class="footer-links">
-          <h4>Learning</h4>
-          <a href="#">Beginner's Guide</a>
-          <a href="#">Video Tutorials</a>
-          <a href="#">Progress Tracker</a>
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQs</a>
         </div>
       </div>
     </footer>
 
     <script>
-      // Web Speech API to read the article aloud
+      // Add voice control functionality here
       const voiceBtn = document.getElementById("voice-btn");
       const pauseBtn = document.getElementById("pause-btn");
       const resumeBtn = document.getElementById("resume-btn");
@@ -180,6 +281,101 @@
       resumeBtn.addEventListener("click", () => {
         window.speechSynthesis.resume();
       });
+      // Add this to existing script
+    //   const demoModal = document.getElementById("demoModal");
+    //   const demoButton = document.querySelector(".demo-button");
+    //   const closeModal = document.querySelector(".close");
+    //   let currentStep = 1;
+
+    //   function showStep(step) {
+    //     document
+    //       .querySelectorAll(".demo-step")
+    //       .forEach((el) => el.classList.remove("active"));
+    //     document.querySelector(`.step-${step}`).classList.add("active");
+    //     document.getElementById("stepIndicator").textContent = `Step ${step}/6`;
+    //   }
+
+    //   demoButton.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     demoModal.style.display = "block";
+    //     currentStep = 1;
+    //     showStep(currentStep);
+    //   });
+
+    //   closeModal.addEventListener("click", () => {
+    //     demoModal.style.display = "none";
+    //   });
+
+    //   window.addEventListener("click", (e) => {
+    //     if (e.target === demoModal) {
+    //       demoModal.style.display = "none";
+    //     }
+    //   });
+
+    //   document.getElementById("nextStep").addEventListener("click", () => {
+    //     if (currentStep < 6) {
+    //       currentStep++;
+    //       showStep(currentStep);
+    //     }
+    //   });
+
+    //   document.getElementById("prevStep").addEventListener("click", () => {
+    //     if (currentStep > 1) {
+    //       currentStep--;
+    //       showStep(currentStep);
+    //     }
+    //   });
+
+    //   document.getElementById("restartDemo").addEventListener("click", () => {
+    //     currentStep = 1;
+    //     showStep(currentStep);
+    //   });
+    const demoModal = document.getElementById("searchDemoModal");
+  const demoButton = document.querySelector(".demo-button");
+  const closeModal = document.querySelector(".close");
+  let currentStep = 1;
+
+  function showStep(step) {
+    document.querySelectorAll(".demo-step").forEach(el => el.classList.remove("active"));
+    document.querySelector(`.step-${step}`).classList.add("active");
+    document.getElementById("stepIndicator").textContent = `Step ${step}/6`;
+  }
+
+  demoButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    demoModal.style.display = "block";
+    currentStep = 1;
+    showStep(currentStep);
+  });
+
+  closeModal.addEventListener("click", () => {
+    demoModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === demoModal) {
+      demoModal.style.display = "none";
+    }
+  });
+
+  document.getElementById("nextStep").addEventListener("click", () => {
+    if (currentStep < 6) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  document.getElementById("prevStep").addEventListener("click", () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  document.getElementById("restartDemo").addEventListener("click", () => {
+    currentStep = 1;
+    showStep(currentStep);
+  });
     </script>
   </body>
 </html>
