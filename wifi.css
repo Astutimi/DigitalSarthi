@@ -1,217 +1,394 @@
+/* Theme Colors */
+:root {
+  --dark-brown: #a01212;
+  --light-bg: #fde4e4;
+  --accent: #ff6b6b;
+}
+
+/* Base Styles */
 main {
-    padding: 2rem 5%;
-  }
-  
-  .article-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 2px solid var(--dark-brown);
-    max-width: 1000px;
-    margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .article-card h3 {
-    color: var(--dark-brown);
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tutorial-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 1.5rem auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .step-container {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    border-left: 4px solid var(--accent);
-  }
-  
-  .step-number {
-    color: var(--dark-brown);
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .step-content {
-    color: #444;
-    line-height: 1.6;
-  }
-  
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    margin: 2rem 0;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  .voice-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  
-  .btn {
-    background: var(--dark-brown);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
-  .demo-button {
-    display: block;
-    width: fit-content;
-    margin: 1.5rem auto;
-    text-decoration: none;
-  }
-  /* Demo Modal Styles */
-.demo-modal {
-  display: none;
-  position: fixed;
+  padding: 2rem 5%;
+}
+
+.article-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--dark-brown);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-card h3 {
+  color: var(--dark-brown);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.tutorial-image {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.step-number {
+  color: var(--dark-brown);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content {
+  color: #444;
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
+  border: none;
 }
 
-.modal-content {
-  background: white;
-  width: 90%;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 10px;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.email-interface {
-  border: 2px solid var(--dark-brown);
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.email-header {
+.voice-controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.email-controls {
-  display: flex;
+  justify-content: center;
   gap: 1rem;
+  margin: 2rem 0;
 }
 
+.btn {
+  background: var(--dark-brown);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.demo-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto;
+  text-decoration: none;
+}
+.demo-modal-inline {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+/* Modal Styles */
+/* Modal Layout - Fixed Box with Progress Outside */
+#wifiDemoModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow: hidden;
+  height: 640px;
+  background: white;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.5rem 1rem;
+  box-sizing: border-box;
+}
+.wifi-header h3 {
+  margin-bottom: 1.2rem;
+}
+.wifi-inner-box {
+   border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: relative; /* Positioning context for buttons */
+}
+.wifi-body {
+ flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 80%;
+  border: 2px solid #990000;
+}
+.wifi-network-option {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+/* Close (X) button - on the outer white box */
+#wifiDemoModal::before {
+  content: "✖";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10000;
+  background: white;
+}
+.close-x-btn {
+  background: transparent;
+  color: #333;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+ line-height: 1;
+}
+.wifi-buttons-container {
+  display: flex;
+  justify-content: space-between; /* Spread buttons */
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--dark-brown); /* Adds a border above buttons */
+  margin-top: 1rem;
+}
+/* Progress steps sit outside the bordered form box */
+.demo-progress {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 8px;
+}
+/*.demo-progress::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: #ccc;
+}*/
+.progress-step {
+  width: 30px;
+  height: 30px;
+  background-color: #eee;
+  color: #333;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.progress-step.active {
+  background-color: #900;
+  color: white;
+}
+
+/* The main demo form area */
+.wifi-interface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.wifi-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Remove Close Button (handled via ::before) */
+#closeWifiModal {
+  display: none;
+}
+
+/* Force same height for demo steps to avoid layout shift */
 .demo-step {
   display: none;
-  position: relative;
-  min-height: 300px;
+  flex: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .demo-step.active {
   display: block;
 }
 
-.input-field {
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+
+.settings-menu {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
-.input-field label {
-  display: block;
-  margin-bottom: 0.5rem;
+.setting-option {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--dark-brown);
+  border-radius: 6px;
+  background: #fff8f8;
+  cursor: default;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+.wifi-controls button {
+  display: flex;
+  justify-content: space-between; /* Spread buttons */
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid var(--dark-brown); /* Adds a border above buttons */
+  margin-top: 1rem;
+}
+
+.wifi-controls button:hover {
+  background: var(--dark-brown);
+}
+.setting-option.highlight {
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+}
+
+.wifi-switch {
+  margin-top: 1rem;
+}
+
+.network-list {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.network-option {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--dark-brown);
+  border-radius: 6px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.network-option.highlight {
+  background-color:lightgreen;
+  color: black;
+  font-weight: bold;
+}
+
+.password-dialog {
+  margin-top: 1.5rem;
+  border: 2px solid var(--dark-brown);
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff0f0;
+  max-width: 300px;
+}
+
+.password-dialog label {
+  font-weight: bold;
   color: var(--dark-brown);
 }
 
-.input-field input, 
-.input-field textarea {
+.password-dialog input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid var(--dark-brown);
+  margin: 0.5rem 0 1rem;
   border-radius: 4px;
+  border: 1px solid #aaa;
 }
 
-.arrow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  animation: bounce 1s infinite;
+.dialog-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
 }
 
-.arrow-to { left: 20px; top: -30px; }
-.arrow-subject { left: 20px; top: -30px; }
-.arrow-body { left: 20px; top: -30px; }
-.arrow-attach { left: 20px; top: -30px; }
-.arrow-send { right: 20px; bottom: -30px; }
+.status-bar {
+  margin: 2rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
 
-.arrow::after {
-  content: '➤';
-  font-size: 32px;
+.wifi-icon {
   color: var(--dark-brown);
 }
 
-.success-message {
-  text-align: center;
-  padding: 2rem;
+.connection-success {
+  padding: 10px;
+  background-color: #e0ffe0;
+  border: 1px solid #28a745;
+  color: #155724;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
-.send-btn {
-  background: var(--dark-brown);
-  color: white;
-  padding: 0.8rem 2rem;
-}
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
-/* Existing styles remain same */
-  @media (max-width: 768px) {
-    .article-card {
-      padding: 1.5rem;
-      margin: 0 1rem;
-    }
-    
-    .article-card h3 {
-      font-size: 1.4rem;
-    }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .article-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
   }
+
+  .article-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr;
+  }
+
+  #wifiDemoModal {
+    width: 95%;
+    padding: 1rem;
+  }
+}
