@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WiFi Setup Tutorial - Digital Saarthi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="wifi.css">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="wifi.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -23,38 +23,15 @@
   <main>
     <div class="article-card" id="article-content">
       <h3>How to Setup WiFi in Your Device</h3>
-      
-      <img src="https://img.freepik.com/premium-photo/business-using-smartphone-with-wifi-icon-business-communication-social-network-concept_34936-3159.jpg?w=1380" alt="WiFi tutorial" class="tutorial-image">
 
-      <div class="step-container">
-        <div class="step-number">Step 1</div>
-        <p class="step-content">Open the Settings app on your device.</p>
-      </div>
+      <img src="https://img.freepik.com/premium-photo/business-using-smartphone-with-wifi-icon-business-communication-social-network-concept_34936-3159.jpg?w=1380" alt="WiFi tutorial" class="tutorial-image" />
 
-      <div class="step-container">
-        <div class="step-number">Step 2</div>
-        <p class="step-content">Go to the 'Wi-Fi' section.</p>
-      </div>
-
-      <div class="step-container">
-        <div class="step-number">Step 3</div>
-        <p class="step-content">Turn on Wi-Fi if it is disabled.</p>
-      </div>
-
-      <div class="step-container">
-        <div class="step-number">Step 4</div>
-        <p class="step-content">Select the desired Wi-Fi network from the available list.</p>
-      </div>
-
-      <div class="step-container">
-        <div class="step-number">Step 5</div>
-        <p class="step-content">Enter the Wi-Fi password and tap 'Connect'.</p>
-      </div>
-
-      <div class="step-container">
-        <div class="step-number">Step 6</div>
-        <p class="step-content">Wait for the connection to establish and ensure the Wi-Fi icon appears in the status bar.</p>
-      </div>
+      <div class="step-container"><div class="step-number">Step 1</div><p class="step-content">Open the Settings app on your device.</p></div>
+      <div class="step-container"><div class="step-number">Step 2</div><p class="step-content">Go to the 'Wi-Fi' section.</p></div>
+      <div class="step-container"><div class="step-number">Step 3</div><p class="step-content">Turn on Wi-Fi if it is disabled.</p></div>
+      <div class="step-container"><div class="step-number">Step 4</div><p class="step-content">Select the desired Wi-Fi network from the available list.</p></div>
+      <div class="step-container"><div class="step-number">Step 5</div><p class="step-content">Enter the Wi-Fi password and tap 'Connect'.</p></div>
+      <div class="step-container"><div class="step-number">Step 6</div><p class="step-content">Wait for the connection to establish and ensure the Wi-Fi icon appears in the status bar.</p></div>
 
       <div class="voice-controls">
         <button id="voice-btn" class="btn">🔊 Listen to Article</button>
@@ -62,17 +39,105 @@
         <button id="resume-btn" class="btn">▶ Resume</button>
       </div>
 
-      <a href="demo-wifi.html" class="demo-button">
-        <button class="btn">Try Demo</button>
-      </a>
+      <button class="btn demo-button">Try Demo</button>
 
       <div class="video-container">
-        <iframe width="864" height="486" src="https://www.youtube.com/embed/eNbK43xP6dE" title="How to Add Wireless Wifi Network Manually in Windows 10 PC or Laptop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+        <iframe width="864" height="486" src="https://www.youtube.com/embed/vjnHrsupqx4" title="How to Connect to WiFi on an Android Device" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </main>
 
+  <!-- WiFi Setup Demo Modal -->
+  <div class="demo-modal-inline" id="wifiDemoModal">
+     <div class="demo-progress">
+    <div class="progress-step active">1</div>
+    <div class="progress-step">2</div>
+    <div class="progress-step">3</div>
+    <div class="progress-step">4</div>
+    <div class="progress-step">5</div>
+    <div class="progress-step">6</div>
+  </div>
+
+    <div class="wifi-interface">
+    <div class="wifi-header">
+      <h3>WiFi Setup Steps</h3>
+      <div class="wifi-controls">
+        <div class="wifi-buttons-container">
+          <button class="btn" id="prevWifiStep">← Previous</button>
+          <button class="btn" id="nextWifiStep">Next →</button>
+        </div>
+      <button class="btn close-x-btn" id="closeWifiModal">✖</button>
+      </div>
+    </div>
+
+      <div class="wifi-body">
+        <div class="wifi-inner-box">
+          
+      <div class="demo-step wifi-step-1 active">
+          <p><strong>Step 1:</strong> Open the <strong>Settings</strong> app on your device.</p>
+          <div class="settings-menu">
+            <div class="setting-option">My Phone</div>
+            <div class="setting-option">SIM & Network Settings</div>
+            <div class="setting-option">Wi-Fi</div>
+            <div class="setting-option">Hotspot</div>
+            <div class="setting-option">Display</div>
+            <div class="setting-option">Sound</div>
+          </div>
+        </div>
+
+        <div class="demo-step wifi-step-2">
+          <p><strong>Step 2:</strong> Tap on <strong>Wi-Fi</strong> option.</p>
+          <div class="settings-menu">
+            <div class="setting-option">My Phone</div>
+            <div class="setting-option">SIM & Network Settings</div>
+            <div class="setting-option highlight">Wi-Fi</div>
+            <div class="setting-option">Hotspot</div>
+            <div class="setting-option">Display</div>
+            <div class="setting-option">Sound</div>
+          </div>
+        </div>
+
+        <div class="demo-step wifi-step-3">
+          <p><strong>Step 3:</strong> Turn on Wi-Fi and view available networks.</p>
+          <div class="wifi-switch">
+            <label><input type="checkbox" checked disabled> Wi-Fi is ON</label>
+            <div class="network-list">
+              <div class="network-option">Home_Network</div>
+              <div class="network-option">Cafe_WiFi</div>
+              <div class="network-option">OfficeNet</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-step wifi-step-4">
+          <p><strong>Step 4:</strong> Select your network.</p>
+          <div class="network-list">
+            <div class="network-option highlight">Home_Network</div>
+            <div class="network-option">Cafe_WiFi</div>
+            <div class="network-option">OfficeNet</div>
+          </div>
+        </div>
+
+        <div class="demo-step wifi-step-5">
+          <p><strong>Step 5:</strong> Enter password and press Connect.</p>
+          <div class="password-dialog">
+            <label>Password: <input type="password" placeholder="••••••••"></label>
+            <button class="btn">Connect</button>
+          </div>
+        </div>
+
+        <div class="demo-step wifi-step-6">
+          <p><strong>Step 6:</strong> You are connected! 🎉</p>
+          <div class="connection-success">✔ Wi-Fi connected successfully</div>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
+    // Voice Synthesis
     const voiceBtn = document.getElementById("voice-btn");
     const pauseBtn = document.getElementById("pause-btn");
     const resumeBtn = document.getElementById("resume-btn");
@@ -83,18 +148,71 @@
     speech.lang = "en-US";
     speech.rate = 0.9;
 
-    voiceBtn.addEventListener("click", () => {
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(speech);
+    voiceBtn.addEventListener("click", () => speechSynthesis.speak(speech));
+    pauseBtn.addEventListener("click", () => speechSynthesis.pause());
+    resumeBtn.addEventListener("click", () => speechSynthesis.resume());
+  </script>
+
+  <script>
+    // WiFi Demo
+    const wifiModal = document.getElementById("wifiDemoModal");
+    const wifiDemoButton = document.querySelector(".demo-button");
+    const prevBtn = document.getElementById("prevWifiStep");
+    const nextBtn = document.getElementById("nextWifiStep");
+    const closeBtn = document.getElementById("closeWifiModal");
+
+    let currentStep = 1;
+    const totalSteps = 6;
+
+    const steps = document.querySelectorAll(".demo-step");
+    const progressSteps = document.querySelectorAll(".progress-step");
+
+    function showWifiStep(step) {
+      steps.forEach(s => s.classList.remove("active"));
+      progressSteps.forEach((p, index) => {
+        p.classList.toggle("active", index < step);
+      });
+
+      const targetStep = document.querySelector(`.wifi-step-${step}`);
+      if (targetStep) targetStep.classList.add("active");
+    }
+
+    wifiDemoButton.addEventListener("click", () => {
+      wifiModal.style.display = "block";
+      currentStep = 1;
+      showWifiStep(currentStep);
     });
 
-    pauseBtn.addEventListener("click", () => {
-      window.speechSynthesis.pause();
+    prevBtn.addEventListener("click", () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showWifiStep(currentStep);
+      }
     });
 
-    resumeBtn.addEventListener("click", () => {
-      window.speechSynthesis.resume();
+    nextBtn.addEventListener("click", () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showWifiStep(currentStep);
+      }
     });
+
+    closeBtn.addEventListener("click", () => {
+      wifiModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === wifiModal) {
+        wifiModal.style.display = "none";
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        wifiModal.style.display = "none";
+      }
+    });
+   
   </script>
 </body>
 </html>
