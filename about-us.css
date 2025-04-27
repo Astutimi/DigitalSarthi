@@ -1,0 +1,27 @@
+/* About Us Page Styles */
+.about-header {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--light-gray);
+  }
+  
+  .about-header h1 {
+    color: var(--dark-brown);
+    font-size: 2.5rem;
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  .about-content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .mission, .offer, .motto-section {
+    margin-bottom: 2rem;
+  }

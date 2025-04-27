@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Payment Tutorial - Digital Saarthi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-text">Digital Saarthi</div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="article.html">ARTICLES</a>
+      <a href="practice.html">PRACTICE</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-card" id="article-content">
+      <h3>How to Make a Digital Payment</h3>
+
+      <img src="payments.png" alt="Digital Payment Tutorial" class="tutorial-image">
+
+      <div class="step-container">
+        <div class="step-number">Step 1</div>
+        <p class="step-content">Install a UPI-enabled app (PhonePe, Google Pay, Paytm)</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 2</div>
+        <p class="step-content">Register with your mobile number linked to bank</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 3</div>
+        <p class="step-content">Add your bank account to the app</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 4</div>
+        <p class="step-content">Scan QR code or enter UPI ID to pay</p>
+      </div>
+
+      <div class="step-container">
+        <div class="step-number">Step 5</div>
+        <p class="step-content">Enter UPI PIN to confirm payment</p>
+      </div>
+
+      <div class="voice-controls">
+        <div>
+          <button id="voice-btn" class="btn">🔊 Listen to Article</button>
+          <button id="pause-btn" class="btn">⏸ Pause</button>
+          <button id="resume-btn" class="btn">▶ Resume</button>
+        </div>
+      </div>
+      
+      <a href="#!" class="demo-button">
+        <button class="btn">Try Demo</button>
+      </a>
+      <div class="video-container">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/eckHENT-16E" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+  
+    </div>
+  </main>
+
+  <!-- Digital Payment Demo Modal -->
+  <div class="demo-modal" id="demoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="booking-interface">
+        <div class="booking-header">
+          <h3>Make a Payment</h3>
+          <div class="booking-controls">
+            <button class="btn" id="prevStep">← Previous</button>
+            <button class="btn" id="nextStep">Next →</button>
+          </div>
+        </div>
+
+        <div class="booking-body">
+          <div class="step-indicator" id="stepIndicator">Step 1/5</div>
+
+          <div class="demo-step step-1 active">
+            <div class="input-field">
+              <label>Select Payment App:</label>
+              <div class="app-options">
+                <button class="app-option">PhonePe</button>
+                <button class="app-option">Google Pay</button>
+                <button class="app-option">Paytm</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-step step-2">
+            <div class="input-field">
+              <label>Mobile Number:</label>
+              <input type="text" placeholder="Enter registered mobile number">
+            </div>
+          </div>
+
+          <div class="demo-step step-3">
+            <div class="input-field">
+              <label>Bank Account:</label>
+              <input type="text" placeholder="Select or Add Bank Account">
+            </div>
+          </div>
+
+          <div class="demo-step step-4">
+            <div class="input-field">
+              <label>Scan or Enter UPI ID:</label>
+              <input type="text" placeholder="Scan QR or Enter UPI ID">
+            </div>
+          </div>
+
+          <div class="demo-step step-5">
+            <div class="success-message">
+              <h3>🎉 Payment Successful!</h3>
+              <button class="btn" id="restartDemo">Pay Again</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">Digital Saarthi</div>
+        <p>Empowering digital literacy</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="article.html">Articles</a>
+        <a href="#">Practice</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQs</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Voice Control
+    const voiceBtn = document.getElementById("voice-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resumeBtn = document.getElementById("resume-btn");
+    const articleContent = document.getElementById("article-content");
+
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = articleContent.innerText;
+    speech.lang = "en-US";
+    speech.rate = 0.9;
+
+    voiceBtn.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(speech);
+    });
+
+    pauseBtn.addEventListener("click", () => window.speechSynthesis.pause());
+    resumeBtn.addEventListener("click", () => window.speechSynthesis.resume());
+
+    // Demo Modal
+    let currentStep = 1;
+    const demoModal = document.getElementById("demoModal");
+    const demoButton = document.querySelector(".demo-button");
+    const closeModal = document.querySelector(".close");
+
+    function showStep(step) {
+      document.querySelectorAll(".demo-step").forEach(el => el.classList.remove("active"));
+      document.querySelector(`.step-${step}`).classList.add("active");
+      document.getElementById("stepIndicator").textContent = `Step ${step}/5`;
+    }
+
+    demoButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      demoModal.style.display = "block";
+      currentStep = 1;
+      showStep(currentStep);
+    });
+
+    closeModal.addEventListener("click", () => demoModal.style.display = "none");
+    window.addEventListener("click", (e) => e.target === demoModal && (demoModal.style.display = "none"));
+
+    document.getElementById("nextStep").addEventListener("click", () => {
+      if(currentStep < 5) showStep(++currentStep);
+    });
+
+    document.getElementById("prevStep").addEventListener("click", () => {
+      if(currentStep > 1) showStep(--currentStep);
+    });
+
+    document.getElementById("restartDemo").addEventListener("click", () => {
+      currentStep = 1;
+      showStep(currentStep);
+    });
+  </script>
+</body>
+</html>
